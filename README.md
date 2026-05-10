@@ -278,3 +278,81 @@ git push
 Chụp màn hình lỗi + gửi terminal/log vào group.
 
 Không tự xóa file lung tung trong project.
+
+# 13. Coding Rules
+
+## Rule 1 — Script phải chạy độc lập
+
+Mọi script phải có thể chạy trực tiếp từ root project.
+
+Đúng:
+
+```r
+source("code/utils.R")
+
+df <- read.csv("data/processed/clean_data.csv")
+```
+
+Sai:
+
+```r
+setwd("C:/Users/...")
+```
+
+Không dùng `setwd()`.
+
+Project phải hoạt động giống nhau trên mọi máy.
+
+---
+
+## Rule 2 — Không hardcode path
+
+Sai:
+
+```r
+read.csv("C:/desktop/project/data.csv")
+```
+
+Đúng:
+
+```r
+read.csv("data/processed/clean_data.csv")
+```
+
+Luôn dùng relative path.
+
+---
+
+## Rule 3 — Comment theo block
+
+Script phải chia block rõ ràng.
+
+Ví dụ:
+
+```r
+# ====================================
+# Normality checking
+# ====================================
+
+shapiro.test(df$tension_strength)
+```
+
+Không viết toàn bộ script thành một khối dài.
+
+---
+
+## Rule 4 — Figure export standardized
+
+Mọi figure phải export bằng code.
+
+Ví dụ:
+
+```r
+png("figures/fig_histogram.png")
+
+hist(df$tension_strength)
+
+dev.off()
+```
+
+Không screenshot figure thủ công từ RStudio.
