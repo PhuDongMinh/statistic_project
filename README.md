@@ -33,13 +33,13 @@ Tools -> Terminal -> New Terminal
 Chạy:
 
 ```bash
-git clone https://github.com/USERNAME/REPO_NAME.git
+git clone https://github.com/PhuDongMinh/statistic_project.git
 ```
 
 Ví dụ:
 
 ```bash
-git clone https://github.com/phu/statistic-project.git
+git clone https://github.com/PhuDongMinh/statistic_project.git
 ```
 
 Sau đó mở file:
@@ -65,9 +65,20 @@ Lệnh này sẽ tự cài đúng package cho project.
 
 # 4. Quy tắc làm việc nhóm
 
-## KHÔNG commit trực tiếp vào main
+## Không code trực tiếp trên `main`
 
-Mỗi người phải tạo branch riêng.
+`main` là phiên bản ổn định của project.
+
+Để tránh:
+- ghi đè code của nhau
+- mất thay đổi
+- conflict khi nhiều người sửa cùng một file
+
+mỗi người sẽ làm việc trên branch(nhánh,là bản copy của code) riêng, sau đó mới merge vào `main`.
+
+---
+
+## Tạo branch riêng cho task của mình
 
 Ví dụ:
 
@@ -80,6 +91,8 @@ Hoặc:
 ```bash
 git checkout -b feature/data-cleaning
 ```
+
+Tên branch nên mô tả công việc đang làm.
 
 ---
 
