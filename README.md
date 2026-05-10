@@ -74,7 +74,7 @@ Lệnh này sẽ tự cài đúng package cho project.
 - mất thay đổi
 - conflict khi nhiều người sửa cùng một file
 
-mỗi người sẽ làm việc trên branch(nhánh,là bản copy của code) riêng, sau đó mới merge vào `main`.
+mỗi người sẽ làm việc trên branch(nhánh,là bản copy của code) riêng, sau đó mới merge(ghép) vào `main`.
 
 ---
 
@@ -84,7 +84,7 @@ Ví dụ:
 
 ```bash
 git checkout -b feature/report
-```
+``` 
 
 Hoặc:
 
@@ -127,7 +127,7 @@ Làm phần được giao.
 
 ```bash
 git add .
-git commit -m "Finish introduction section"
+git commit -m "Commit message"
 ```
 
 Commit message phải mô tả rõ đã làm gì.
@@ -192,7 +192,7 @@ project/
 │
 ├── data/          # dataset
 ├── code/          # file R
-├── report/        # report
+├── report/        # report, optimal
 ├── figures/       # graph/result
 ├── renv/          # renv config
 ├── renv.lock
